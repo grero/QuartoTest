@@ -1,0 +1,30 @@
+
+---
+title: "Plots Demo"
+author: "Roger Herikstad"
+date: "3/14/2023"
+format:
+  html:
+    code-fold: true
+jupyter: julia-1.8
+---
+
+## Parametric Plots
+
+Plot function pair (x(u), y(u)). 
+See @fig-parametric for an example.
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "This is an example of a sine wave"
+
+using QuartoTest2
+using Makie
+using CairoMakie
+
+t = range(0.0, stop=2pi, length=100)
+with_theme(plot_theme) do
+    fig,ax = lines(t, sin.(t))
+    fig
+end
+```
